@@ -26,6 +26,7 @@
   --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+/*   header    */
 .navbar {
   position: fixed;
   top: 0;
@@ -42,7 +43,6 @@
   background-color: var(--bg-black);
 }
 
-
 .logo {
   color: rgba(255, 255, 255, 0.8);
   display: flex;
@@ -53,7 +53,6 @@
   font-size: 1rem;
   text-decoration: none;
   transform: translateX(-20px);
-  
 }
 
 .logo-img {
@@ -83,7 +82,6 @@
 
 .nav-links a,
 .nav-actions a {
-  
   color: rgba(255, 255, 255, 0.8);
   transition: color 0.2s ease;
   text-decoration: none;
@@ -99,4 +97,104 @@
   gap: 1.75rem;
   font-size: 16px;
   transform: translateX(-50px);
+}
+
+/*    section 2      */
+
+.solutions-section {
+  padding: 64px 0 80px;
+  background-color: var(--bg-light);
+}
+
+.solutions-grid {
+  display: flex;
+  gap: 16px;
+  height: 460px;
+}
+
+.sol-card {
+  flex: 1;
+  background-color: var(--bg-card-light);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.sol-card-header {
+  padding: 24px;
+  z-index: 2;
+  transition: var(--transition-smooth);
+}
+
+.sol-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.sol-card-title {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: color 0.3s ease;
+}
+
+.sol-card-arrow {
+  width: 28px;
+  height: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: var(--transition-smooth);
+}
+
+.sol-card-desc {
+  font-size: 0.9rem;
+  color: #d1d5db;
+  margin-top: 12px;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+.sol-card-img {
+  width: 100%;
+  height: 75%;
+  object-fit: cover;
+  transition: var(--transition-smooth);
+}
+
+/* Hover State menyerupai kartu "Mapping" di video */
+.sol-card:hover {
+  flex: 2.3;
+  background-color: var(--bg-dark);
+}
+
+.sol-card:hover .sol-card-title {
+  color: var(--text-light);
+}
+
+.sol-card:hover .sol-card-arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+.sol-card:hover .sol-card-desc {
+  max-height: 120px;
+  opacity: 1;
+}
+
+.sol-card:hover .sol-card-img {
+  height: 62%;
 }
