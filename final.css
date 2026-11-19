@@ -1,0 +1,102 @@
+:root {
+  --bg-black: #080808;
+  --bg-dark: #111111;
+  --bg-grey: #d8d8d6;
+  --bg-light: #e8e8e6;
+  --text-white: #f4f4f2;
+  --text-dark: #121212;
+  --text-muted: #8e8e8e;
+  --border-dark: rgba(255, 255, 255, 0.15);
+  --border-light: rgba(0, 0, 0, 0.15);
+  --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+  --bg-dark: #060b16;
+  --bg-surface: #0c1527;
+  --bg-card: rgba(14, 24, 44, 0.78);
+  --its-blue: #0077ff;
+  --its-blue-glow: rgba(0, 119, 255, 0.4);
+  --accent-cyan: #00d4ff;
+  --accent-gold: #f59e0b;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --border-subtle: rgba(0, 212, 255, 0.14);
+  --border-active: rgba(0, 119, 255, 0.65);
+  --font-display: "Orbitron", sans-serif;
+  --font-body: "Plus Jakarta Sans", sans-serif;
+  --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: linear-gradient(to bottom, rgba(0, 0, 0, 0.85), rgba(0, 0, 0, 0));
+  backdrop-filter: blur(4px);
+  padding: 1.25rem 2.5rem;
+  transition: background 0.3s ease;
+}
+
+.navbar:hover {
+  background-color: var(--bg-black);
+}
+
+
+.logo {
+  color: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  font-size: 1rem;
+  text-decoration: none;
+  transform: translateX(-20px);
+  
+}
+
+.logo-img {
+  height: 30px;
+  width: auto;
+  object-fit: contain;
+  text-decoration: none;
+}
+
+.nav-container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.15rem 6rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1.75rem;
+  font-size: 14px;
+  text-decoration: none;
+  transform: translateX(-10px);
+}
+
+.nav-links a,
+.nav-actions a {
+  
+  color: rgba(255, 255, 255, 0.8);
+  transition: color 0.2s ease;
+  text-decoration: none;
+}
+
+.nav-links a:hover,
+.nav-actions a:hover {
+  color: #ffffff;
+}
+
+.nav-actions {
+  display: flex;
+  gap: 1.75rem;
+  font-size: 16px;
+  transform: translateX(-50px);
+}
