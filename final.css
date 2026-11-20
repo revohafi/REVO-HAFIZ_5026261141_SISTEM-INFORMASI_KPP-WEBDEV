@@ -380,6 +380,7 @@ html {
   letter-spacing: 0.04em;
   white-space: nowrap;
   opacity: 0.85;
+  width: 500;
 }
 
 @keyframes scrollLogos {
@@ -603,4 +604,3 @@ body {
   align-items: flex-start;
   gap: 60px;
 }
-
