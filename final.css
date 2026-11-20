@@ -1,16 +1,21 @@
 :root {
   --bg-black: #080808;
   --bg-dark: #111111;
+  --bg-navy: #060b16;
   --bg-grey: #d8d8d6;
   --bg-light: #e8e8e6;
+  --bg-card-light: #ffffff;
+  --bg-card-dark: #181818;
   --text-white: #f4f4f2;
+  --text-light: #ffffff;
   --text-dark: #121212;
   --text-muted: #8e8e8e;
+  --yellow: #d4cb26;
+  --radius-md: 12px;
   --border-dark: rgba(255, 255, 255, 0.15);
   --border-light: rgba(0, 0, 0, 0.15);
   --font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: "JetBrains Mono", monospace;
-  --bg-dark: #060b16;
   --bg-surface: #0c1527;
   --bg-card: rgba(14, 24, 44, 0.78);
   --its-blue: #0077ff;
@@ -31,7 +36,7 @@ html {
   scroll-padding-top: 80px;
 }
 
-/*   header    */
+/* Header / Navbar */
 .navbar {
   position: fixed;
   top: 0;
@@ -64,13 +69,11 @@ html {
   height: 30px;
   width: auto;
   object-fit: contain;
-  text-decoration: none;
 }
 
 .nav-container {
   max-width: 1500px;
   margin: 0 auto;
-  padding: 0 24px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -81,7 +84,6 @@ html {
   display: flex;
   gap: 1.75rem;
   font-size: 14px;
-  text-decoration: none;
   transform: translateX(-10px);
 }
 
@@ -104,16 +106,16 @@ html {
   transform: translateX(-50px);
 }
 
-/*    section 2      */
-
+/* Section 2 (Solutions / Philosophy Cards) */
 .solutions-section {
-  max-width: 1500px;
-  margin: 0 auto;
-  padding: 64px 5%;
+  padding: 64px 5% 80px;
+  background-color: var(--bg-light);
 }
 
 .solutions-grid {
   display: flex;
+  max-width: 1200px; /* Komentar diperbaiki agar tidak merusak CSS di bawahnya */
+  margin: 0 auto;
   gap: 16px;
   height: 460px;
 }
@@ -158,7 +160,7 @@ html {
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
+  color: #ffffff;
   opacity: 0;
   transform: translateX(-8px);
   transition: var(--transition-smooth);
@@ -181,9 +183,8 @@ html {
   transition: var(--transition-smooth);
 }
 
-/* Hover State menyerupai kartu "Mapping" di video */
+/* Hover State */
 .sol-card:hover {
-
   flex: 2.3;
   background-color: var(--bg-dark);
 }
@@ -198,8 +199,408 @@ html {
 }
 
 .sol-card:hover .sol-card-desc {
-  color: #ffffff;
   max-height: 120px;
   opacity: 1;
+}
+
+.sol-card:hover .sol-card-img {
+  height: 62%;
+}
+
+/* Section 5 (Flying Robots / Fleet Showcase) */
+.dark-wrapper {
+  background-color: var(--bg-dark);
+  width: 100%;
+  color: var(--text-light);
+  padding: 100px 5% 80px;
+}
+
+.section-heading-lg {
+  max-width: 1140px;
+  margin: 0 auto 48px;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.products-grid {
+  display: grid;
+  max-width: 1140px;
+  margin: 0 auto 60px;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.product-item {
+  display: flex;
+  flex-direction: column;
+}
+
+.product-name {
+  font-size: 1.35rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+  line-height: 1.3;
+  min-height: 56px;
+}
+
+.product-card {
+  position: relative;
+  height: 440px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background-color: var(--bg-card-dark);
+  cursor: pointer;
+}
+
+.product-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition:
+    transform 0.5s ease,
+    filter 0.4s ease;
+}
+
+.product-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.92) 15%,
+    rgba(0, 0, 0, 0.4) 60%,
+    transparent 100%
+  );
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.product-desc {
+  font-size: 0.92rem;
+  color: #e5e7eb;
+  margin-bottom: 48px;
+  opacity: 0;
+  transform: translateY(15px);
+  transition: var(--transition-smooth);
+}
+
+.product-plus-btn {
+  position: absolute;
+  bottom: 24px;
+  right: 24px;
+  width: 34px;
+  height: 34px;
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.4);
+  transition: var(--transition-smooth);
+}
+
+.product-card:hover img {
+  transform: scale(1.04);
+  filter: brightness(0.65);
+}
+
+.product-card:hover .product-desc {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.product-card:hover .product-plus-btn {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* section  */
+.stories-cta {
+  text-align: center;
+  padding-right: 5%;
+  margin-top: 28px;
+}
+
+.btn-primary-blue {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #146ef5;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 500;
+  padding: 14px 24px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary-blue:hover {
+  background-color: #0d58c8;
+}
+
+/*   section 6   */
+.leaders-section {
+  padding: 56px 0 80px;
+  text-align: center;
+}
+
+.leaders-section h2 {
+  font-size: clamp(28px, 3.2vw, 40px);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+  margin-bottom: 48px;
+}
+
+.marquee-wrapper {
+  width: 100%;
+  overflow: hidden;
+  padding: 16px 0;
+}
+
+.marquee-track {
+  display: flex;
+  align-items: center;
+  gap: 80px;
+  width: max-content;
+  animation: scrollLogos 28s linear infinite;
+}
+
+.marquee-wrapper:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.logo-item {
+  font-size: 20px;
+  font-weight: 700;
+  color: #111827;
+  letter-spacing: 0.04em;
+  white-space: nowrap;
+  opacity: 0.85;
+}
+
+@keyframes scrollLogos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.disclaimer-text {
+  max-width: 680px;
+  margin: 48px auto 0;
+  padding: 0 20px;
+  font-size: 11px;
+  color: #6b7280;
+  line-height: 1.5;
+  letter-spacing: 0.02em;
+}
+
+/* section 7 */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  background-color: #ffffff;
+  color: #111111;
+}
+
+.bayu-footer {
+  border-top: 1px solid #e5e5e5;
+  padding: 64px 6% 40px;
+  background-color: #ffffff;
+}
+
+.footer-logo {
+  height: auto;
+  width: 250px;
+  object-fit: contain;
+  text-decoration: none;
+}
+.footer-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.footer-top {
+  display: grid;
+  grid-template-columns: 1.6fr 1.1fr 1fr;
+  gap: 40px;
+  margin-bottom: 64px;
+}
+
+.brand-logo {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+  transform: translateY(-0px);
+}
+
+.logo-main {
+  font-size: 24px;
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -0.8px;
+  color: #111111;
+}
+
+.logo-sub {
+  font-size: 8px;
+  font-weight: 700;
+  letter-spacing: 3.5px;
+  margin-top: 3px;
+  color: #111111;
+}
+
+.heritage-circle {
+  margin-top: 44px;
+  width: 118px;
+  height: 118px;
+  border: 1.5px dashed #111111;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.heritage-circle p {
+  font-size: 8.5px;
+  font-weight: 700;
+  line-height: 1.45;
+  color: #111111;
+  letter-spacing: 0.2px;
+}
+
+.footer-nav-primary {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  font-weight: bold;
+  position: relative;
+  justify-self: end;
+  transform: translateX(100px);
+}
+
+.footer-nav-primary a {
+  display: flex;
+  color: #181818;
+  flex-direction: column;
+  gap: 18px;
+  position: relative;
+  justify-self: end;
+}
+
+.footer-nav-primary a:hover {
+  color: #ff8000;
+}
+
+.footer-nav-secondary {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  justify-self: end;
+}
+
+.footer-nav-secondary a {
+  text-decoration: none;
+  font-size: 12.5px;
+  font-weight: 400;
+  color: #666666;
+  transition: color 0.2s ease;
+  width: fit-content;
+}
+
+.footer-nav-secondary a:hover {
+  color: #ff8000;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 10.5px;
+  font-weight: 700;
+  letter-spacing: 0.4px;
+  color: #111111;
+}
+
+.papaya-square {
+  width: 8px;
+  height: 8px;
+  background-color: #ff8000;
+  display: inline-block;
+}
+
+/* Responsif untuk Layar HP/Tablet */
+@media (max-width: 768px) {
+  .footer-top {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .footer-nav-primary a:first-child::before {
+    display: none;
+  }
+}
+
+.social-links {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: translateY(80px);
+}
+
+.social-links a {
+  width: 26px;
+  height: 26px;
+  background-color: #111827;
+  color: #ffffff;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-links a:hover {
+  background-color: #146ef5;
+}
+
+.footer-container {
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+/* Logo Atas */
+.footer-logo-area {
+  margin-bottom: 32px;
+}
+
+.footer-logo {
+  height: auto;
+  width: 250px;
+  display: block;
+  object-fit: contain;
+  transform: scale(150px);
+}
+
+/* Layout 2 Kolom */
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 60px;
 }
 

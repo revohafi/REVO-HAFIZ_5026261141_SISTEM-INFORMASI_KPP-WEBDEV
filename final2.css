@@ -187,7 +187,7 @@ a {
 .hero-card {
   background: rgba(255, 255, 255, 0.06);
   padding: 12px;
-  border-radius: 4px;
+  border-radius: 12px;
   position: relative;
 }
 
@@ -251,7 +251,7 @@ a {
 
 .title-bold {
   font-size: 32px;
-  font-weight: 700;
+  font-weight: 500;
   line-height: 1.1;
 }
 
@@ -264,8 +264,8 @@ a {
 
 .title-orange {
   font-size: 32px;
+  color: #d4cb26;
   font-weight: 700;
-  color: var(--papaya);
   line-height: 1.1;
 }
 
@@ -355,7 +355,7 @@ a {
 }
 
 .year-tag {
-  color: var(--papaya);
+  color: #d4cb26;
   font-weight: 700;
   font-size: 18px;
   display: block;
@@ -366,6 +366,11 @@ a {
   max-width: 460px;
   font-size: 14px;
   color: var(--text-gray);
+}
+
+.team-card {
+  border-radius: 12px;
+  overflow: hidden;
 }
 
 .team-visual {
@@ -410,7 +415,7 @@ a {
   position: relative;
   display: block;
   overflow: hidden;
-  border-radius: 2px;
+  border-radius: 12px;
   background-color: #181818;
   justify-content: center;
   align-items: center;
@@ -488,7 +493,7 @@ a {
   position: relative;
   display: block;
   overflow: hidden;
-  border-radius: 2px;
+  border-radius: 12px;
   background-color: #181818;
   justify-content: center;
   align-items: center;
@@ -515,7 +520,7 @@ a {
   width: 100%;
   height: 460px;
   object-fit: cover;
-  border-radius: 4px;
+  border-radius: 12px;
 }
 
 .news-list {
