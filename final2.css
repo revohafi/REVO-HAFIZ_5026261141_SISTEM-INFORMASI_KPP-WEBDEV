@@ -297,6 +297,8 @@ a {
   display: flex;
   align-items: center;
   gap: 24px;
+  margin-left: auto;
+  transform: translateX(100px);
 }
 
 .btn-discover {
@@ -304,11 +306,12 @@ a {
   align-items: center;
   gap: 10px;
   background-color: var(--dark);
-  color: #ffffff;
-  font-size: 12px;
-  font-weight: 600;
-  padding-left: 14px;
-  border-radius: 4px;
+  color: rgba(0, 119, 255);
+  font-size: 14px;
+  font-weight: 900;
+  padding-left: 0px;
+  border-radius: 1px;
+  padding-right: 18px;
 }
 
 .btn-icon-box {
@@ -342,49 +345,7 @@ a {
   gap: 16px;
 }
 
-/* Promo Banners */
-.promo-card {
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.promo-header {
-  padding: 20px 24px;
-  font-size: 24px;
-  font-weight: 700;
-  display: flex;
-  flex-direction: column;
-  line-height: 1.15;
-}
-
-.bg-dark {
-  background-color: var(--dark);
-}
-.bg-orange {
-  background-color: var(--papaya);
-}
-.text-white {
-  color: #ffffff;
-}
-.text-orange {
-  color: var(--papaya);
-}
-.text-dark {
-  color: var(--dark);
-}
-
-.promo-img {
-  position: relative;
-}
-
-.promo-img img {
-  width: 100%;
-  height: 300px;
-  object-fit: cover;
-  display: block;
-}
-
-/* 2026 Teams Section */
+/* sectionn 3 */
 .teams-intro {
   display: flex;
   justify-content: space-between;
@@ -396,7 +357,7 @@ a {
 .year-tag {
   color: var(--papaya);
   font-weight: 700;
-  font-size: 14px;
+  font-size: 18px;
   display: block;
   margin-bottom: 6px;
 }
@@ -407,21 +368,23 @@ a {
   color: var(--text-gray);
 }
 
-.team-card {
-  background-color: var(--light-gray);
-  border-radius: 4px;
-  overflow: hidden;
-}
-
-.team-card img {
+.team-visual {
   width: 100%;
   height: 340px;
-  object-fit: cover;
-  display: block;
+  background-color: #222222;
+  color: #ffffff;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
 }
 
 .team-footer {
   padding: 16px 20px;
+  background-color: var(--light-gray, #f3f3f3);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -429,17 +392,113 @@ a {
   font-size: 15px;
 }
 
-/* Heritage News Cards */
-.news-card img {
+.divisions-section {
+  padding: 40px 4% 64px;
+  background-color: #ffffff;
+}
+
+.divisions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.division-card {
+  width: 100%;
+  height: 340px;
+  color: #ffffff;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 2px;
+  background-color: #181818;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Efek zoom halus saat kartu disentuh kursor */
+.division-card:hover img {
+  transform: scale(1.05);
+}
+
+/* Gradasi gelap di bagian bawah foto agar tulisan putih terbaca jelas */
+.division-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(0, 0, 0, 0.85) 0%,
+    rgba(0, 0, 0, 0.2) 40%,
+    rgba(0, 0, 0, 0) 100%
+  );
+}
+
+.division-footer {
+  position: absolute;
+  bottom: 30px;
+  left: 24px;
+  right: 24px;
+  z-index: 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.division-footer h3 {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.1;
+}
+
+.diagonal-arrow {
+  font-size: 26px;
+  font-weight: 700;
+  color: rgba(0, 119, 255);
+  line-height: 1;
+  transition: transform 0.25s ease;
+}
+
+.division-card:hover .diagonal-arrow {
+  transform: translate(4px, -4px);
+}
+
+@media (max-width: 900px) {
+  .nav-links {
+    display: none;
+  }
+  .divisions-grid {
+    grid-template-columns: 1fr;
+  }
+  .division-card {
+    height: 360px;
+  }
+}
+
+/* sectin 4 */
+
+.archiev-card {
   width: 100%;
   height: 150px;
-  object-fit: cover;
-  border-radius: 4px;
-  margin-bottom: 10px;
+  color: #ffffff;
+  position: relative;
+  display: block;
+  overflow: hidden;
+  border-radius: 2px;
+  background-color: #181818;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  font-weight: 700;
+  text-align: center;
 }
 
 .news-card p {
-  font-size: 13px;
+  font-size: 15px;
   font-weight: 500;
   color: var(--dark);
 }

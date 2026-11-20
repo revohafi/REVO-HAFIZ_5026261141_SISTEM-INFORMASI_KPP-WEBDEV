@@ -26,6 +26,11 @@
   --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
 
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
 /*   header    */
 .navbar {
   position: fixed;
@@ -102,8 +107,9 @@
 /*    section 2      */
 
 .solutions-section {
-  padding: 64px 0 80px;
-  background-color: var(--bg-light);
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 64px 5%;
 }
 
 .solutions-grid {
@@ -177,6 +183,7 @@
 
 /* Hover State menyerupai kartu "Mapping" di video */
 .sol-card:hover {
+
   flex: 2.3;
   background-color: var(--bg-dark);
 }
@@ -191,10 +198,8 @@
 }
 
 .sol-card:hover .sol-card-desc {
+  color: #ffffff;
   max-height: 120px;
   opacity: 1;
 }
 
-.sol-card:hover .sol-card-img {
-  height: 62%;
-}
